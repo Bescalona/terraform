@@ -1,0 +1,8 @@
+-API Documentation put-object
+https://docs.aws.amazon.com/cli/latest/reference/s3api/put-object.html
+
+-API Documentation get-object
+https://docs.aws.amazon.com/cli/latest/reference/s3api/get-object.html
+
+-Condiciones de una politica
+https://docs.aws.amazon.com/es_es/AmazonS3/latest/dev/amazon-s3-policy-keys.html

@@ -1,0 +1,20 @@
+-Loguearse en aws cli
+aws configure
+
+-Validar si el bucket se encuentra encriptado
+aws s3api get-bucket-encryption --bucket "my-bucket-name"
+
+-Probar subir un archivo con la api sin indicar la key (en la policy atachada al bucket indicamos que es obligación subir archivos utilizando una key en especifico)
+aws s3api put-object --bucket "nombre del bucket" --body "nombre del archivo a subir" --key "nombre que le damos al archivo que se almacenara en el bucket"
+
+-Forma correcta de subir un archivo con la api
+aws s3api put-object --bucket "nombre del bucket" --body "nombre del archivo a subir" --key "nombre que le damos al archivo que se almacenara en el bucket" --ssekms-key-id "arn de una kms key" --server-side-encryption aws:kms
+
+-Descargar un archivo con la api
+aws s3api get-object --bucket "nombre del bucket" --key "nombre del archivo a descargar" "nombre que le damos al archivo descargado"
+
+-Subir un archivo desde cli 
+aws s3 cp "nombre del archivo" s3://"nombre del bucket" 
+
+-Descargar un archivo desde cli
+aws s3 cp s3://"nombre del bucket"/"nombre del archivo" .
